@@ -654,11 +654,11 @@
 			font-size: 1.35rem;
 		}
 		.paragraph {
-			font-size: 13px;
+			font-size: 14px;
 		}
 
 		.word {
-			font-size: 13px;
+			font-size: 14px;
 		}
 
 	}
