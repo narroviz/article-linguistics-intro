@@ -648,7 +648,7 @@
 	}
 
 
-	@media only screen and (max-width: 350px) {
+	@media only screen and (max-width: 500px) {
 		
 		.title {
 			font-size: 1.35rem;
