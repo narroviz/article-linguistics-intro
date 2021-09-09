@@ -53,8 +53,6 @@ const reformatHtmlFile = (htmlFile) => {
 	    <link rel='preload' href='https://narro.design/assets/fonts/raleway/Raleway-medium.woff' type='font/woff' as='font' crossorigin>
 	    <link rel='preload' href='https://narro.design/assets/fonts/raleway/Raleway-heavy.woff' type='font/woff' as='font' crossorigin>
 
-		<link rel='stylesheet' href='./../css/${ARTICLE_NAME}.css' />
-
 		<style>
 			/*
 			********************
@@ -148,7 +146,6 @@ const reformatCssFile = (cssFile) => {
 	  });
 	});
 }
-// "@font-face{font-family:'Raleway';src:url('/assets/fonts/raleway/Raleway-extralight.woff');font-weight:200;font-style:normal;font-stretch:normal;font-display:swap}@font-face{font-family:'Raleway';src:url('/assets/fonts/raleway/Raleway-medium.woff');font-weight:400;font-style:normal;font-stretch:normal;font-display:swap}@font-face{font-family:'Raleway';src:url('/assets/fonts/raleway/Raleway-heavy.woff');font-weight:700;font-style:normal;font-stretch:normal;font-display:swap}@font-face{font-family:'Avenir';src:url('/assets/fonts/avenir/Avenir-Light.woff');font-weight:400;font-style:normal;font-stretch:normal;font-display:swap}@font-face{font-family:'Avenir';src:url('/assets/fonts/avenir/Avenir-Medium.woff');font-weight:500;font-style:normal;font-stretch:normal;font-display:swap}@font-face{font-family:'Avenir';src:url('/assets/fonts/avenir/Avenir-Heavy.woff');font-weight:700;font-style:normal;font-stretch:normal;font-display:swap}"
 
 async function copyFile(oldPath, newPath) {
 	if (fs.existsSync(oldPath)) {

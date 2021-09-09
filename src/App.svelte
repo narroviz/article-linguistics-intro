@@ -219,7 +219,7 @@
 	  		<div class='slide-container'>
 	  			<div class="title">275 Graphemes</div>
 	  			<div class='paragraph'>
-		  			Mostly due to silent letters, there are far more graphemes. By counting the mappings in the ~35K English words, we can find the following counts: 33 <span class="highlight-vowel">vowel</span> graphemes, 101 <span class="highlight-consonant">consonant</span> graphemes and 141 <span class="highlight-mixed">mixed</span>.
+		  			Due to silent letters, there are far more graphemes. By counting the mappings in the ~35K English words, we can find the following counts: 33 <span class="highlight-vowel">vowel</span> graphemes, 101 <span class="highlight-consonant">consonant</span> graphemes and 141 <span class="highlight-mixed">mixed</span>.
 		  		</div>
 	  			<div class="circle-graph-container">
 	  				<CircleGraph data={graphemeCounts}/>
@@ -279,21 +279,21 @@
 						    	<div style="width: 100%; height: 100%; display:flex; flex-direction: column;">
 							    	
 							    	<div style="width: 100%; height: 70%; display:flex; flex-direction: column;" >
-							    		<div style="width: 100%; height: 20%; display:flex; flex-direction: row; justify-content: center; align-items: end; font-size: 10px; font-weight: 500;">
-							    			# Occurrences in 35K Word Corpus
+							    		<div style="width: 100%; height: 20%; display: -webkit-box; -webkit-box-align: end; font-size: 10px; font-weight: 500; text-align: center;">
+							    			<div style="margin-left:auto; margin-right:auto"># Occurrences in 35K Word Corpus</div>
 							    		</div>
-								    	<div style="width: 100%; height: 55%; display:flex; flex-direction: row; justify-content: center; align-items: end;">
-								    		<div style="width: 50px; padding-right: 5px;">
-								    			<div style="margin: auto; width: 50px; height: 50px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
+								    	<div style="width: 100%; height: 55%; display:flex; flex-direction: row; justify-content: center;">
+								    		<div style="width: 50px; padding-right: 5px; display: -webkit-box; -webkit-box-align: end;">
+								    			<div style="margin: 0; margin-left: auto; margin-right: auto; width: 50px; height: 50px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
 								    		</div>
-								    		<div style="width: 40px; padding-left: 5px; padding-right: 5px;">
-									    		<div style="margin: auto; width: 30px; height: 30px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
+								    		<div style="width: 40px; padding-left: 5px; padding-right: 5px; display: -webkit-box; -webkit-box-align: end;">
+									    		<div style="margin: 0; margin-left: auto; margin-right: auto; width: 30px; height: 30px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
 									    	</div>
-								    		<div style="width: 30px; padding-right: 5px;">
-								    			<div style="margin: auto; width: 20px; height: 20px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
+								    		<div style="width: 30px; padding-right: 5px; display: -webkit-box; -webkit-box-align: end;">
+								    			<div style="margin: 0; margin-left: auto; margin-right: auto; width: 20px; height: 20px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
 								    		</div>
-								    		<div style="width: 20px; padding-right: 5px;">
-								    			<div style="margin: auto; width: 9px; width: 9px; height: 9px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
+								    		<div style="width: 20px; padding-right: 5px; display: -webkit-box; -webkit-box-align: end;">
+								    			<div style="margin: 0; margin-left: auto; margin-right: auto; width: 9px; width: 9px; height: 9px; border-radius: 100px; border: 1px solid rgb(169, 169, 169);"/>
 								    		</div>
 								    	</div>
 								    	<div style="width: 100%; height: 20%; display:flex; flex-direction: row; justify-content: center; align-items: center;">
@@ -315,10 +315,10 @@
 							    	</div>
 
 							    	<div style="width: 100%; height: 30%; display:flex; flex-direction: column;" >
-								    	<div style="width: 100%; height: 50%; display:flex; flex-direction: row; justify-content: center; align-items: end;">
-								    		<div style="margin: 0; margin-right: 10px; width: 33%; max-width: 50px; height: 5px; background: rgba(233,131,160); margin-bottom: 3px;"/>
-								    		<div style="margin: 0; width: 33%; max-width: 50px; height: 5px; background: rgba(91,143,205); margin-bottom: 3px;"/>
-								    		<div style="margin: 0; margin-left: 10px; width: 33%; max-width: 50px;  height: 5px; background: #c480e5; margin-bottom: 3px;"/>
+								    	<div style="width: 100%; height: 50%; -webkit-box-align: end; display: -webkit-box; -webkit-box-pack: center;">
+								    		<div style="margin: 0; margin-right: 10px; width: 33%; max-width: 50px; height: 5px; background: rgba(233,131,160); margin-bottom: 3px; display: -webkit-box; -webkit-box-align: end;"/>
+								    		<div style="margin: 0; width: 33%; max-width: 50px; height: 5px; background: rgba(91,143,205); margin-bottom: 3px; display: -webkit-box; -webkit-box-align: end;"/>
+								    		<div style="margin: 0; margin-left: 10px; width: 33%; max-width: 50px;  height: 5px; background: #c480e5; margin-bottom: 3px; display: -webkit-box; -webkit-box-align: end;"/>
 								    	</div>
 								    	<div style="width: 100%; ; height: 50%; display:flex; flex-direction: row; justify-content: center; align-items: center;">
 								    		<p style="margin: 0; margin-right: 10px; width: 33%; max-width: 50px; height: 15px; font-size: 9px; font-weight: 500;">Vowel</p>
@@ -578,6 +578,7 @@
 		padding-right: 10px;
 		text-align: right;
 		font-size: 14px;
+		font-weight:  500;
 		color: rgb(169,169,169);
 	}
 
@@ -630,6 +631,7 @@
 	.link-text {
 		font-weight: 500;
 		border-bottom: 1px solid black;
+		color: black;
 	}
 
 	.link-text:hover {
@@ -652,11 +654,11 @@
 			font-size: 1.35rem;
 		}
 		.paragraph {
-			font-size: 15px;
+			font-size: 13px;
 		}
 
 		.word {
-			font-size: 15px;
+			font-size: 13px;
 		}
 
 	}
