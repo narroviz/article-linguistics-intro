@@ -17,12 +17,13 @@
   import Intro from "./Intro.svelte";
   import CircleTextBackground from "./CircleTextBackground.svelte"
   import CircleGraph from "./CircleGraph.svelte"
-  import { getRandomArbitrary, dynamicSort, numberWithCommas, get, formatDecimalAsPercentage } from "./utils.js"
+  import { getRandomArbitrary, dynamicSort, numberWithCommas, get, formatDecimalAsPercentage, isMobile } from "./utils.js"
 
   import phonemeCounts from '../public/assets/data/phoneme_counts.js';
   import graphemeCounts from '../public/assets/data/grapheme_counts.js';
   import phonemeToGrapheme from '../public/assets/data/phoneme_to_grapheme.js';
 
+  console.log(isMobile.any())
 
   SwiperCore.use([EffectFade,Navigation,Pagination,Keyboard,A11y]);
 
@@ -82,7 +83,7 @@
 			<CircleTextBackground bind:activeIndex={activeIndex}/>
 	</div>
 	<div style="height:100%; max-width: 1200px; margin: auto;">
-		<Swiper effect="{'fade'}" pagination="{true}" allowTouchMove={false} initialSlide={0} navigation="{true}" fadeEffect="{{crossFade: true}}" a11y="{true}" keyboard="{true}" class="swiper" on:slideChange={(e) => updateActiveIndex(val => e.detail[0][0].activeIndex)}>
+		<Swiper effect="{'fade'}" pagination="{true}" allowTouchMove={isMobile.any() ? true : false} initialSlide={0} navigation="{true}" fadeEffect="{{crossFade: true}}" a11y="{true}" keyboard="{true}" class="swiper" on:slideChange={(e) => updateActiveIndex(val => e.detail[0][0].activeIndex)}>
 
 	  	<SwiperSlide>
 	  		<Intro/>
@@ -196,40 +197,55 @@
 			  			<p class="grammar-unit"><span class="highlight-consonant">Z</span></p>|<p class="grammar-unit"><span class="highlight-vowel">AA</span></p>|<p class="grammar-unit"><span class="highlight-consonant">R</span></p>
 		  			</div>
 		  		</div>
-
-		  		<div class='paragraph' style="padding-top: 1.5rem;">
-		  			 For more info on the data methodology, check out the accompanying <a href="https://github.com/narroviz/data-linguistics" target="_blank" class="link-text">Github repo</a>.
-		  		</div>
 		  	</div>
 	  	</SwiperSlide>
 	  	<SwiperSlide>
 	  		<div class='slide-container'>
-		  		<div class="title">39 Phonemes</div>
-		  		<div class='paragraph'>
-		  			For its phonemes, the CMU Pronouncing Dictionary modified an alphabet of sounds known as <a class="link-text" href="https://en.wikipedia.org/wiki/ARPABET" target="_blank">ARPAbet</a>. Its version has 15 <span class="highlight-vowel">vowels</span>, 24 <span class="highlight-consonant">consonants</span> (39 total). It also has 21 <span class="highlight-mixed">diphonemes</span>.
-
+		  		<div class="title" style="padding-bottom: 1rem;">39 Phonemes</div>
+		  		<div class='paragraph' style="padding-top: 0rem; padding-bottom: 0.5rem">
+		  			CMU modified <a class="link-text" href="https://en.wikipedia.org/wiki/ARPABET" target="_blank">ARPAbet's</a> alphabet of sounds, resulting in 39 phonemes: 15 <span class="highlight-vowel">vowels</span> & 24 <span class="highlight-consonant">consonants</span>. It also has 21 <span class="highlight-mixed">diphonemes</span> (2 phonemes merged).
 		  		</div>
 	  			<div class="circle-graph-container">
 	  				<CircleGraph data={phonemeCounts}/>
 	  			</div>
+					<div class='paragraph' style="padding-top: 0.5rem">
+		  			The numbers show how many times a phoneme appears in the 35K CMU words. Some phonemes appear twice or more in the same word, like the <span class="highlight-consonant">N</span> in ba<span class="highlight-consonant">n</span>a<span class="highlight-consonant">n</span>a.
+		  		</div>
 		  	</div>
 
 	  	</SwiperSlide>
 	  	<SwiperSlide>
 	  		<div class='slide-container'>
-	  			<div class="title">275 Graphemes</div>
-	  			<div class='paragraph'>
-		  			Due to silent letters, there are far more graphemes. By counting the mappings in the ~35K English words, we can find the following counts: 33 <span class="highlight-vowel">vowel</span> graphemes, 101 <span class="highlight-consonant">consonant</span> graphemes and 141 <span class="highlight-mixed">mixed</span>.
+	  			<div class="title" style="padding-bottom: 1rem;">275 Graphemes</div>
+	  			<div class='paragraph' style="padding-top: 0rem; padding-bottom: 0.5rem">
+		  			From the mappings in the ~35K English words, there are 275 graphemes: 33 <span class="highlight-vowel">vowel</span> graphemes, 101 <span class="highlight-consonant">consonant</span> graphemes and 141 <span class="highlight-mixed">mixed</span>.
 		  		</div>
 	  			<div class="circle-graph-container">
 	  				<CircleGraph data={graphemeCounts}/>
 	  			</div>
+					<div class='paragraph' style="padding-top: 0.5rem">
+		  			The numbers show how many times a grapheme appears in the corpus. Some graphemes also appear twice or more in the same word, again like the <span class="highlight-consonant">N</span> in ba<span class="highlight-consonant">n</span>a<span class="highlight-consonant">n</span>a.
+		  		</div>
+	  		</div>
+	  	</SwiperSlide>
+	  	<SwiperSlide>
+	  		<div class='slide-container'>
+	  			<div class="title">Phonemes &harr; Graphemes</div>
+	  			<div class='paragraph'>
+		  			The graphic on the following page lets you dive more into all the unexpected mappings between sounds and letters in English.
+		  		</div>
+	  			<div class='paragraph'>
+	  				You can discover oddities like the phoneme <span class="highlight-consonant">P</span> mapping to the bizzare grapheme <span class="highlight-consonant">GH</span> in <span class="bold">hiccou<span class="highlight-consonant">gh</span></span>. The OED labeled this <a href="https://en.wiktionary.org/wiki/folk_etymology" target='_blank' class="link-text">folk etymology</a> relic "<a href="https://english.stackexchange.com/questions/91910/are-there-regional-distinctions-in-how-hiccup-hiccough-is-spelled/91927" target='_blank' class="link-text">a mere error</a>," yet its use continues.
+		  		</div>
+		  		<div class='paragraph'>
+		  			 Following this intro to linguistics, I'll make a couple more articles diving into alternate spellings and the poetic features of words. Lastly, if you're interested in the data, check out the accompanying <a href="https://github.com/narroviz/data-linguistics" target="_blank" class="link-text">Github repo</a>.
+		  		</div>
 	  		</div>
 	  	</SwiperSlide>
 	  	<SwiperSlide>
 	  		
 	  		<div class='slide-container'>
-	  			<div class="title" style="padding-top: 30px;">Phoneme-to-Grapheme Mappings</div>
+	  			<div class="title" style="padding-top: 20px;">Phonemes &harr; Graphemes</div>
 
 			  	<div class="table-top-container">
 				  	<div class="phoneme-title">Phoneme</div>
@@ -508,8 +524,8 @@
 
 	@media only screen and (max-width: 600px) {
 		.circle-graph-container {
-			height: 250px;
-			width: 250px;
+			height: 225px;
+			width: 225px;
 		}
 		div.second { 
 			width: 100%; 
