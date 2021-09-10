@@ -26,6 +26,7 @@
   SwiperCore.use([EffectFade,Navigation,Pagination,Keyboard,A11y]);
 
   let sortedPhonemes = phonemeCounts.sort(dynamicSort("-count"))
+  console.log(sortedPhonemes)
   let activeData = {}
 
   let iteration = 0
@@ -560,8 +561,6 @@
 			border-radius: 0px;
 			border: none;
 			background: white;
-			position: absolute;
-			bottom: 0;
     }
     .subtitle {
     	font-size: 8px;
