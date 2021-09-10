@@ -23,8 +23,6 @@
   import graphemeCounts from '../public/assets/data/grapheme_counts.js';
   import phonemeToGrapheme from '../public/assets/data/phoneme_to_grapheme.js';
 
-  console.log(isMobile.any())
-
   SwiperCore.use([EffectFade,Navigation,Pagination,Keyboard,A11y]);
 
   let sortedPhonemes = phonemeCounts.sort(dynamicSort("-count"))
