@@ -81,7 +81,7 @@
 			<CircleTextBackground bind:activeIndex={activeIndex}/>
 	</div>
 	<div style="height:100%; max-width: 1200px; margin: auto;">
-		<Swiper effect="{'fade'}" pagination="{true}" allowTouchMove={isMobile.any() ? true : false} initialSlide={0} navigation="{true}" fadeEffect="{{crossFade: true}}" a11y="{true}" keyboard="{true}" class="swiper" on:slideChange={(e) => updateActiveIndex(val => e.detail[0][0].activeIndex)}>
+		<Swiper effect="{'fade'}" pagination="{true}" allowTouchMove={false} initialSlide={0} navigation="{true}" fadeEffect="{{crossFade: true}}" a11y="{true}" keyboard="{true}" class="swiper" on:slideChange={(e) => updateActiveIndex(val => e.detail[0][0].activeIndex)}>
 
 	  	<SwiperSlide>
 	  		<Intro/>
